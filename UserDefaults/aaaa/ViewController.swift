@@ -17,10 +17,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        array = UserDefaults.standard.array(forKey: "aa") as? [String] ?? []
-        lastId = UserDefaults.standard.integer(forKey: "bb")
-        print(array)
-        print(lastId)
+        array = UserDefaults.standard.array(forKey: "aa") as? [String] ?? [] // 저장된 array값 불러오기 key: "aa"
+        lastId = UserDefaults.standard.integer(forKey: "bb") // 저장된 lastId 불러오기 key: "bb"
     }
     
     @IBAction func btnAdd(_ sender: Any) {
@@ -31,9 +29,9 @@ class ViewController: UIViewController {
         tableView.reloadData()
         
     }
-    @IBAction func btnSave(_ sender: Any) {
-        UserDefaults.standard.set(array, forKey: "aa")
-        UserDefaults.standard.set(lastId, forKey: "bb")
+    @IBAction func btnSave(_ sender: Any) { // save버튼 누를시
+        UserDefaults.standard.set(array, forKey: "aa") // array값 저장 key: "aa"
+        UserDefaults.standard.set(lastId, forKey: "bb") // lastId 저장 key: "bb"
     }
 }
 
